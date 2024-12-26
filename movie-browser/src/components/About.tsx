@@ -1,8 +1,9 @@
+import Hero from "./Hero";
+
 const AboutView = () => {
     return (
         <div>
-            <h1>About</h1>
-            <p>This is a About</p>
+            <Hero text="About Us" /> 
         </div>
     );
 }
