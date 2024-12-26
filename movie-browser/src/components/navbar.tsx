@@ -1,21 +1,23 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg border rounded shadow-sm">
-            <div className="container">
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <div className="container-fluid">
+                <Link className="navbar-brand" to="/">Movie Browser</Link>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a className="navbar-brand" href="#">Hidden brand</a>
+                <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="#">Home</a>
+                    <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link" href="#">Link</a>
+                    <Link className="nav-link" to="/about/">About</Link>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link disabled" aria-disabled="true">Disabled</a>
+                    <Link className="nav-link" to="/about/">About</Link>
                     </li>
                 </ul>
                 <form className="d-flex" role="search">

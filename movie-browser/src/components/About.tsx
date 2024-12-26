@@ -6,3 +6,5 @@ const AboutView = () => {
         </div>
     );
 }
+
+export default AboutView;
