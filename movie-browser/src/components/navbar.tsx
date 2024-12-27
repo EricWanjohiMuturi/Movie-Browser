@@ -1,6 +1,22 @@
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+//tmdb api key = 6919ec4f9b641564469ce530022911da
 
-const Navbar = () => {
+
+interface NavbarProps {
+    searchText: string;
+    setSearchText: (text: string) => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ searchText, setSearchText }) => {
+    const navigate = useNavigate();
+
+    interface UpdateSearchTextEvent extends React.ChangeEvent<HTMLInputElement> {}
+
+    const updateSearchText = (e: UpdateSearchTextEvent): void => {
+        navigate('/search/');
+        setSearchText(e.target.value);
+    }
+
     return (
         <nav className="navbar navbar-expand-lg border rounded shadow-sm">
             <div className="container-fluid">
@@ -21,7 +37,14 @@ const Navbar = () => {
                     </li>
                 </ul>
                 <form className="d-flex" role="search">
-                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                    <input 
+                    className="form-control me-2" 
+                    type="search" 
+                    placeholder="Search" 
+                    aria-label="Search" 
+                    value={searchText}
+                    onChange={updateSearchText}
+                    />
                     <button className="btn btn-outline-success" type="submit">Search</button>
                 </form>
                 </div>
